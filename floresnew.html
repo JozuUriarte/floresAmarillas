@@ -12,8 +12,7 @@
 <body class="container">
     <div class="night"></div>
 
-
-    <h3 >Que estas flores amarillas te recuerden siempre lo especial y valiosa que eres</h3>
+    <h3 id="texto-mensaje" style="transition: opacity 0.8s ease;">Que estas flores amarillas te recuerden siempre lo especial y valiosa que eres</h3>
     <audio src="media/Chayanne - Veo en ti la luz.mp3" autoplay loop></audio>
     <!--flotadores-->
     <div class="containerbur">
@@ -37,7 +36,6 @@
             <span style="--i:26"><img src="media/sol.png"  alt=""></span>
             <span style="--i:15"><img src="media/sol.png"  alt=""></span>
             <span style="--i:28"><img src="media/sol.png"  alt=""></span>
-
         </div>
     </div>
     <div class="flowers">
@@ -57,7 +55,6 @@
           <div class="flower__light flower__light--6"></div>
           <div class="flower__light flower__light--7"></div>
           <div class="flower__light flower__light--8"></div>
-  
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
@@ -85,7 +82,6 @@
           <div class="flower__light flower__light--6"></div>
           <div class="flower__light flower__light--7"></div>
           <div class="flower__light flower__light--8"></div>
-  
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
@@ -111,7 +107,6 @@
           <div class="flower__light flower__light--6"></div>
           <div class="flower__light flower__light--7"></div>
           <div class="flower__light flower__light--8"></div>
-  
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
@@ -337,5 +332,30 @@
       </div>
     </div>
     <script src="main.js"></script>
+
+    <!-- Script agregado para rotar las 5 frases de amistad y aliento -->
+    <script>
+      const frases = [
+        "Que estas flores amarillas te recuerden siempre lo especial y valiosa que eres",
+        "Gracias por tu amistad y por siempre brindar una gran energía",
+        "Nunca dudes de tu potencial, eres capaz de lograr todo lo que te propongas",
+        "Que tu día esté lleno de luz, sonrisas y momentos increíbles",
+        "Recuerda que cuentas conmigo siempre, ¡sigue brillando con fuerza!"
+      ];
+
+      let indice = 0;
+      const elementoTexto = document.getElementById("texto-mensaje");
+
+      setInterval(() => {
+        // Efecto suave de desvanecimiento
+        elementoTexto.style.opacity = 0;
+        
+        setTimeout(() => {
+          indice = (indice + 1) % frases.length;
+          elementoTexto.textContent = frases[indice];
+          elementoTexto.style.opacity = 1;
+        }, 800); // Cambia el texto cuando se vuelve invisible
+      }, 4000); // Cambia cada 4 segundos
+    </script>
   </body>
 </html>
